@@ -20,3 +20,10 @@ Debemos definir cosas como:
 - Costos
 - ICP (perfil de cliente ideal)
 - Entre otras
+
+## Estrategia
+
+1. [Servicios](estrategia/01-servicios.md)
+2. [ICP](estrategia/02-icp.md)
+3. [Precios](estrategia/03-precios.md)
+4. [Flujo de captación](estrategia/04-flujo.md)
