@@ -60,10 +60,10 @@ Para el correo en frío:
 ## Métricas
 
 - Leads identificados por semana
-- Tasa de respuesta por nicho y por canal (WhatsApp vs. correo) (para descubrir qué nicho responde más rápido)
+- Tasa de respuesta por nicho y por canal (WhatsApp vs. correo), para descubrir qué nicho y qué canal responden más rápido
 - Citas por semana
 - Tasa de cierre y ticket promedio
 
 ## Siguiente paso técnico
 
-Construir el paso 1 + 2: un script que, dado un nicho y una ciudad, saque negocios de Google Maps, analice su sitio y deje una lista calificada en el CRM.
+Pasos 1 y 2 hechos con el DENUE (ver `prospeccion/`). Falta: plantillas de mensaje (WhatsApp + correo), carga al CRM y notificaciones.
