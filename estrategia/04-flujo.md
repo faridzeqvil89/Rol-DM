@@ -46,10 +46,21 @@ Reglas para cuidar el número:
 - **Señal de alerta:** si varios contactos bloquean o reportan, bajar el volumen varios días.
 - Tener un **número de respaldo** por si banean el principal.
 
+## Contacto doble: WhatsApp + correo
+
+Cada lead recibe **el mismo día** un WhatsApp corto y un correo con más detalle (los hallazgos de su sitio o de su perfil de Google). El WhatsApp puede decir "le acabo de enviar un correo con lo que encontré". Así cada canal refuerza al otro.
+
+Para el correo en frío:
+- **Dominio secundario:** por ejemplo `faridclienta.com` en vez de tu dominio principal, con Google Workspace o Zoho Mail. Si hay reportes de spam, tu dominio principal queda protegido.
+- **Configurar SPF, DKIM y DMARC** en el dominio antes de enviar.
+- **Calentamiento:** 2–3 semanas con volumen bajo y creciente, de 10 a 30 correos al día por buzón.
+- **Texto plano,** sin imágenes ni enlaces en el primer correo, con una línea para darse de baja.
+- **Rebotes:** algunos correos del DENUE pueden ser viejos; se quitan de la lista los que reboten.
+
 ## Métricas
 
 - Leads identificados por semana
-- Tasa de respuesta por nicho (para descubrir qué nicho responde más rápido)
+- Tasa de respuesta por nicho y por canal (WhatsApp vs. correo) (para descubrir qué nicho responde más rápido)
 - Citas por semana
 - Tasa de cierre y ticket promedio
 

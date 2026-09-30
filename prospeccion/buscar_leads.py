@@ -56,6 +56,11 @@ MUNICIPIOS = {
     "tlajomulco": "097",
 }
 
+PATRON_EMAIL = re.compile(r"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}")
+# Falsos positivos típicos al extraer correos del HTML.
+EMAIL_IGNORAR = ("example.", "sentry", "wixpress", "domain.com", ".png", ".jpg", ".webp", "@2x")
+PAGINAS_CONTACTO = ("contacto", "contact", "contactanos")
+
 PUNTOS_TAMANO = {"6 a 10 personas": 2, "11 a 30 personas": 3, "31 a 50 personas": 3}
 
 
@@ -87,17 +92,44 @@ def normalizar_url(www):
     return www if www.startswith("http") else "http://" + www
 
 
+def email_valido(email):
+    email = (email or "").strip().lower()
+    if not PATRON_EMAIL.fullmatch(email):
+        return ""
+    return "" if any(x in email for x in EMAIL_IGNORAR) else email
+
+
+def extraer_emails(html):
+    return {e for e in (email_valido(m) for m in PATRON_EMAIL.findall(html)) if e}
+
+
+def descargar_html(url):
+    peticion = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; revision-seo)"})
+    with urllib.request.urlopen(peticion, timeout=15) as resp:
+        return resp.read(500_000).decode("utf-8", errors="ignore").lower(), resp.geturl(), resp.status
+
+
+def buscar_emails_contacto(url_base):
+    """Busca correos en las páginas de contacto más comunes."""
+    emails = set()
+    for pagina in PAGINAS_CONTACTO:
+        try:
+            html, _, _ = descargar_html(url_base.rstrip("/") + "/" + pagina)
+        except (urllib.error.URLError, TimeoutError, ValueError, OSError):
+            continue
+        emails |= extraer_emails(html)
+        if emails:
+            break
+    return emails
+
+
 def revisar_sitio(url):
     """Revisión rápida y gratuita del sitio. Devuelve (datos, hallazgos)."""
-    datos = {"sitio_estado": "", "sitio_https": "", "sitio_segundos": "", "sitio_wordpress": ""}
+    datos = {"sitio_estado": "", "sitio_https": "", "sitio_segundos": "", "sitio_wordpress": "", "emails_sitio": set()}
     hallazgos = []
-    peticion = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; revision-seo)"})
     inicio = time.time()
     try:
-        with urllib.request.urlopen(peticion, timeout=15) as resp:
-            html = resp.read(500_000).decode("utf-8", errors="ignore").lower()
-            final = resp.geturl()
-            estado = resp.status
+        html, final, estado = descargar_html(url)
     except (urllib.error.URLError, TimeoutError, ValueError, OSError) as e:
         razon = str(getattr(e, "reason", e))
         if "Name or service not known" in razon or "nodename nor servname" in razon:
@@ -115,6 +147,7 @@ def revisar_sitio(url):
         "sitio_https": "si" if final.startswith("https") else "no",
         "sitio_segundos": str(segundos),
         "sitio_wordpress": "si" if "wp-content" in html else "no",
+        "emails_sitio": extraer_emails(html) or buscar_emails_contacto(final),
     })
     if not final.startswith("https"):
         hallazgos.append("Sin HTTPS (el navegador lo marca como no seguro)")
@@ -137,8 +170,6 @@ def puntuar(fila, nicho):
     puntos = 0
     if fila["telefono"]:
         puntos += 3
-    if fila["email"]:
-        puntos += 1
     puntos += PUNTOS_TAMANO.get(fila["personal"], 0)
     nombre = (fila["nombre"] + " " + fila["razon_social"]).lower()
     if any(p in nombre for p in NICHOS[nicho]["palabras_ticket_alto"]):
@@ -156,6 +187,8 @@ def main():
                         help="Separados por coma: " + ",".join(MUNICIPIOS))
     parser.add_argument("--limite", type=int, default=40, help="Cuántos leads exportar (los de mayor puntuación)")
     parser.add_argument("--sin-revisar-sitios", action="store_true", help="No visitar los sitios web")
+    parser.add_argument("--permitir-sin-email", action="store_true",
+                        help="Incluir leads sin correo (por defecto se exigen WhatsApp y correo)")
     args = parser.parse_args()
 
     config = NICHOS[args.nicho]
@@ -183,7 +216,8 @@ def main():
                 "direccion": direccion,
                 "telefono": telefono,
                 "whatsapp": f"https://wa.me/52{telefono}",
-                "email": fila["correoelec"].strip().lower(),
+                "email": email_valido(fila["correoelec"]),
+                "email_fuente": "denue" if email_valido(fila["correoelec"]) else "",
                 "sitio": normalizar_url(fila["www"]),
                 "maps": f"https://www.google.com/maps/search/?api=1&query={fila['latitud']},{fila['longitud']}",
                 "hallazgos": [],
@@ -196,13 +230,23 @@ def main():
         print(f"Revisando {len(con_sitio)} sitios web...", file=sys.stderr)
         for lead in con_sitio:
             datos, hallazgos = revisar_sitio(lead["sitio"])
+            emails_sitio = datos.pop("emails_sitio")
             lead.update(datos)
             lead["hallazgos"] = hallazgos
+            if emails_sitio:
+                # El correo del sitio suele estar más actualizado que el del DENUE.
+                lead["email_alterno"] = lead["email"] if lead["email"] not in emails_sitio else ""
+                lead["email"] = sorted(emails_sitio)[0]
+                lead["email_fuente"] = "sitio"
 
     for lead in leads:
         if not lead["sitio"]:
             lead["hallazgos"] = ["Sin sitio web registrado"]
         lead["puntos"] = puntuar(lead, args.nicho)
+
+    if not args.permitir_sin_email:
+        leads = [l for l in leads if l["email"]]
+        print(f"{len(leads)} con WhatsApp y correo.", file=sys.stderr)
 
     leads.sort(key=lambda l: l["puntos"], reverse=True)
     seleccion = leads[: args.limite]
@@ -212,7 +256,7 @@ def main():
     salida = os.path.join(DIR_SALIDA, f"leads_{args.nicho}_{fecha}.csv")
     columnas = [
         "puntos", "nombre", "razon_social", "personal", "municipio", "colonia", "direccion",
-        "telefono", "whatsapp", "email", "sitio", "sitio_estado", "sitio_https", "sitio_segundos",
+        "telefono", "whatsapp", "email", "email_fuente", "email_alterno", "sitio", "sitio_estado", "sitio_https", "sitio_segundos",
         "sitio_wordpress", "hallazgos", "maps", "id_denue",
     ]
     with open(salida, "w", newline="", encoding="utf-8-sig") as f:

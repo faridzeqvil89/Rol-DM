@@ -52,6 +52,23 @@ Devuélveme todo en una tabla CSV, sin texto adicional.
 <pega aquí la lista>
 ```
 
+## Prompt C: conseguir correos que faltan
+
+El DENUE trae correo de cerca de un tercio de los negocios. Para los demás (o para confirmar un correo viejo):
+
+```
+Para cada negocio de esta lista, busca su correo electrónico en este orden y detente
+en cuanto lo encuentres:
+1. Su sitio web (página de inicio, pie de página y página de "Contacto").
+2. Su página de Facebook, sección "Información" / "Detalles".
+3. Su perfil de Instagram (biografía o botón "Correo").
+4. Directorios como Doctoralia o Top Doctors (dentistas) o Abogados.com.mx (abogados).
+Anota: nombre, email, fuente (sitio/facebook/instagram/directorio) y facebook_url.
+Si no encuentras correo, pon "sin_email". Devuélveme todo en una tabla CSV, sin texto adicional.
+
+<pega aquí la lista con nombre y municipio>
+```
+
 ## Qué hacer con el resultado
 
 Pega la tabla aquí, en Claude Code, y yo:
