@@ -1,41 +1,57 @@
 # ICP (perfil de cliente ideal)
 
-> Borrador. Ajustar con datos de clientes pasados: ¿quiénes pagaron más, se quedaron más tiempo y fueron más fáciles de trabajar?
+## Principio
 
-## Empresa
+Clientes cuyo **ticket promedio es alto** frente al costo del servicio: con **1 cliente nuevo** recuperan la inversión del mes. Además deben ser **fáciles de contactar** (WhatsApp y teléfono públicos en Google) y **responder rápido**.
 
-| Criterio | Valor propuesto |
+No se limita a empresas: incluye profesionistas independientes y negocios locales.
+
+## Mercado
+
+| Criterio | Valor |
 |---|---|
-| Tipo | SaaS B2B y empresas de servicios B2B |
-| Tamaño | 10–200 empleados |
-| Etapa | Seed a Serie B, o bootstrapped con ingresos estables |
-| Ingresos | ~USD 1M–20M ARR |
-| Mercado | Por definir (EE. UU., España, LATAM) |
-| Idioma | Por definir (inglés, español o ambos) |
-| Sitio | Hecho en WordPress, Webflow o similar, con blog activo o potencial de contenido |
+| País principal | México (CDMX, Guadalajara, Monterrey, Querétaro, Puebla, Mérida…) |
+| Secundario | Negocios hispanos en EE. UU. (en inglés y español) |
+| Idioma | Español e inglés |
 
-## Personas que deciden
+## Nichos prioritarios (ROI alto)
 
-| Rol | Qué le importa |
-|---|---|
-| Founder / CEO (empresas < 30 personas) | Crecimiento de pipeline con poco presupuesto |
-| Head of Marketing / VP Marketing | Pipeline orgánico, costo por lead, reportar a dirección |
-| Head of Growth / Demand Gen | Canales escalables fuera de paid |
-| Content / SEO Manager | Ejecución técnica que su equipo no puede cubrir |
+| Nicho | Ticket típico del cliente final | Por qué encaja |
+|---|---|---|
+| **Abogados** (familiar, penal, laboral, migratorio, corporativo) | Alto | 1 caso paga meses de servicio; la gente busca abogado en Google con urgencia |
+| **Clínicas dentales / ortodoncia / implantes** | Alto | Tratamientos caros, búsqueda local fuerte |
+| **Cirujanos plásticos y medicina estética** | Muy alto | Alta intención de búsqueda, compiten por visibilidad |
+| **Clínicas de fertilidad, oftalmología, especialistas médicos** | Muy alto | Tickets altos y pacientes que investigan antes de decidir |
+| **Inmobiliarias y asesores inmobiliarios** | Muy alto (comisión) | 1 venta paga el año |
+| **Contadores y despachos fiscales** | Medio-alto, recurrente | Clientes que pagan cada mes |
+| **Arquitectos, constructoras, remodelación** | Muy alto | Proyectos grandes |
+| **Escuelas privadas, universidades, cursos** | Alto (colegiatura recurrente) | Temporadas de inscripción claras |
+| **Talleres especializados, blindaje, energía solar** | Alto | Instalaciones con ticket alto |
 
-## Señales de compra (disparadores para prospectar)
+Segmento secundario (en inglés): SaaS y servicios B2B, donde tienes experiencia previa.
 
-- Levantó una ronda de inversión en los últimos 6 meses
-- Está contratando a alguien de marketing, contenido o SEO
-- Lanzó un rediseño o una migración de sitio recientemente
-- Caída visible de tráfico orgánico
+## Quién decide
+
+El **dueño** o socio: abogado titular, doctor, director de clínica o de la inmobiliaria. Decide rápido y sin comité.
+
+## Señales de oportunidad (qué detecta la prospección)
+
+- No tiene sitio web, o el sitio es lento, viejo o no se ve bien en celular
+- Perfil de Google Business incompleto, con pocas reseñas o sin respuesta a las reseñas
+- No aparece en el top 3 del mapa de Google para "[servicio] en [ciudad]"
 - Core Web Vitals en rojo
-- La competencia aparece en respuestas de IA y la empresa no
-- Blog abandonado o sin crecimiento
+- La competencia aparece en ChatGPT o Google AI Overviews y él no
+- Paga anuncios pero no tiene SEO (depende 100 % de pagar publicidad)
+
+## Criterios de contacto fácil
+
+- WhatsApp o teléfono visible en Google Maps o en su sitio
+- Reseñas recientes (señal de que el negocio está activo)
+- Responde reseñas o mensajes (señal de que responde rápido)
 
 ## Descalificadores
 
-- Presupuesto de marketing muy bajo o nulo
-- Empresas B2C o e-commerce (salvo que se decida incluirlas)
-- Ya trabajan con una agencia SEO con contrato reciente
-- Sin sitio propio o sin capacidad de hacer cambios en él
+- Negocio sin actividad reciente
+- Franquicias o cadenas, donde el marketing se decide en un corporativo
+- E-commerce (fuera del foco por ahora)
+- Ticket bajo (fondas, tiendas de abarrotes…) donde el ROI no alcanza

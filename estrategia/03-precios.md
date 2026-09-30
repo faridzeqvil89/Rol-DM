@@ -1,33 +1,43 @@
 # Precios
 
-> Borrador con rangos de referencia en USD para el mercado B2B/SaaS. Ajustar según mercado objetivo, experiencia y capacidad.
+> Precios en MXN. Para clientes en EE. UU., cotizar en USD.
+> Referencia usada: SEO a USD 15–25/hora ≈ **MXN 270–450/hora** (tipo de cambio aproximado de 18 MXN por USD; actualizar).
+
+## Recomendación: vender por paquete, no por hora
+
+Un abogado no compra horas, compra clientes. Con paquetes mensuales el cliente entiende qué recibe, y tú puedes subir el precio conforme mejoras la eficiencia gracias a la automatización y a los subcontratistas.
 
 ## Entrada
 
-| Servicio | Rango |
+| Servicio | Precio |
 |---|---|
-| Auditoría SEO + AI Visibility | USD 750 – 2.000 |
+| **Diagnóstico gratis** (gancho de prospección) | $0: 3–5 hallazgos del sitio y del perfil de Google, generados en automático |
+| **Auditoría SEO + Google Maps + IA** | MXN 2,500 – 5,000 |
 
-Si el cliente contrata un retainer dentro de 30 días, el costo de la auditoría se descuenta del primer mes.
+## Sitios web
 
-## Retainers mensuales
-
-| Plan | Incluye | Rango |
+| Paquete | Incluye | Precio |
 |---|---|---|
-| **Base** | SEO técnico + on page + reporte mensual | USD 1.500 – 2.500 / mes |
-| **Crecimiento** | Base + off page + AI Visibility | USD 3.000 – 5.000 / mes |
-| **Completo** | Crecimiento + CRO + contenido | USD 5.000 – 8.000 / mes |
+| **Sitio básico WordPress** | Hasta 5 páginas, responsive, botón de WhatsApp, SEO básico | desde **MXN 8,000** |
+| **Sitio profesional** | Hasta 10–15 páginas, blog, SEO on page, Core Web Vitals optimizados | MXN 15,000 – 25,000 |
+| **Sitio + landing de conversión** | Lo anterior + landing por servicio + formularios y seguimiento | MXN 25,000 – 40,000 |
 
-Compromiso mínimo sugerido: 3–6 meses. El SEO tarda en dar resultados, y un compromiso corto hace que el cliente abandone antes de verlos.
+## Retainers mensuales de SEO
 
-## Proyectos
+| Plan | Horas aprox. | Incluye | Precio mensual |
+|---|---|---|---|
+| **Local** | ~10 h | Google Business Profile, SEO local, reseñas, reporte | MXN 3,500 – 4,500 |
+| **Crecimiento** | ~20 h | Local + contenido + on page + enlaces locales | MXN 6,500 – 9,000 |
+| **Dominio** | ~35 h | Crecimiento + AI Visibility + CRO + varias ubicaciones | MXN 12,000 – 16,000 |
 
-| Servicio | Rango |
-|---|---|
-| Optimización de Core Web Vitals | USD 1.000 – 3.000 |
-| Migración SEO | USD 2.000 – 5.000 |
-| Sitio WordPress B2B | USD 3.000 – 10.000 |
+Compromiso mínimo sugerido: 3 meses.
+
+## Mensaje de ROI para vender
+
+> "Si un solo caso nuevo le deja $30,000, con un cliente al mes el SEO ya se pagó."
+
+Para cada nicho conviene calcular: ticket promedio del cliente final ÷ precio del plan = clientes que necesita para recuperar la inversión (normalmente menos de 1).
 
 ## Capacidad
 
-Definir cuántos clientes de retainer puedes atender a la vez. Con eso sale la meta mensual de citas y leads para el flujo automatizado.
+Sin límite fijo gracias a la subcontratación. Hay que definir el margen objetivo por subcontratista (sugerido: 40–60 %).

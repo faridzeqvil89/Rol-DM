@@ -1,33 +1,33 @@
 # Servicios
 
-> Borrador. Validar alcance, entregables y nombres comerciales.
+## Entrada (para abrir conversaciones)
 
-## Oferta de entrada (para abrir conversaciones)
+| Servicio | Qué incluye | Entregable |
+|---|---|---|
+| **Diagnóstico gratis** | 3–5 hallazgos concretos del sitio, del perfil de Google y de la visibilidad en IA | Mensaje o PDF corto, generado en automático durante la prospección |
+| **Auditoría SEO + Google Maps + IA** | Auditoría técnica (Screaming Frog), palabras clave y competencia (Semrush/Ahrefs), Core Web Vitals, perfil de Google, presencia en ChatGPT y AI Overviews | Informe priorizado + llamada de revisión |
 
-| Servicio | Qué incluye | Entregable | Duración |
-|---|---|---|---|
-| **Auditoría SEO + AI Visibility** | Auditoría técnica, on page, Core Web Vitals y presencia en respuestas de IA (ChatGPT, Perplexity, Google AI Overviews) | Informe con hallazgos priorizados por impacto y esfuerzo + llamada de revisión | 1–2 semanas |
-
-La auditoría es el producto de entrada: tiene un precio bajo, es fácil de vender en frío y lleva de forma natural a un retainer.
-
-## Servicios principales (retainer mensual)
+## Sitios web
 
 | Servicio | Qué incluye |
 |---|---|
-| **SEO técnico** | Rastreo e indexación, arquitectura, datos estructurados, migraciones, Core Web Vitals |
-| **SEO on page** | Optimización de páginas clave, intención de búsqueda, enlazado interno, briefs de contenido |
-| **SEO off page** | Link building, digital PR, menciones de marca |
-| **AI Visibility (GEO/AEO)** | Optimización para aparecer y ser citado en motores de respuesta de IA; seguimiento de menciones y citas |
-| **CRO** | Análisis de embudo, hipótesis y tests en landing pages y páginas de precios |
+| **Sitio WordPress** | Sitio profesional sin e-commerce, rápido, responsive, con WhatsApp y SEO desde el inicio |
+| **Landing pages por servicio** | Una página por servicio y ciudad (por ejemplo "abogado de divorcios en Monterrey") |
+| **Optimización de Core Web Vitals** | Mejora de velocidad con medición antes y después |
 
-## Proyectos puntuales
+## SEO (retainer mensual)
 
 | Servicio | Qué incluye |
 |---|---|
-| **Sitio WordPress** | Diseño y desarrollo de un sitio B2B optimizado desde el inicio |
-| **Optimización de Core Web Vitals** | Mejora de LCP, INP y CLS con medición antes y después |
-| **Migración SEO** | Plan de redirecciones, control de riesgos y monitoreo posterior |
+| **SEO local** | Google Business Profile, citas en directorios, estrategia de reseñas, posicionamiento en el mapa |
+| **SEO técnico** | Rastreo, indexación, datos estructurados, velocidad |
+| **SEO on page y contenido** | Páginas de servicio, blog, preguntas frecuentes |
+| **SEO off page** | Enlaces locales, directorios del nicho, menciones en medios |
+| **AI Visibility (GEO/AEO)** | Que el negocio aparezca cuando alguien pregunta a ChatGPT, Gemini o Perplexity "¿qué abogado me recomiendas en…?" |
+| **CRO** | Más llamadas y mensajes de WhatsApp con el mismo tráfico |
 
 ## Diferenciador
 
-SEO clásico + visibilidad en IA para empresas B2B y SaaS: que el cliente aparezca en Google **y** en las respuestas de ChatGPT, Perplexity y Gemini cuando su comprador investiga soluciones.
+> "Hago que te encuentren en Google, en Google Maps y en ChatGPT cuando alguien busca lo que ofreces en tu ciudad."
+
+Muy pocas agencias locales en México ofrecen visibilidad en IA. Es un buen gancho para diferenciarse.
