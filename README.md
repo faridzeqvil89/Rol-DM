@@ -28,3 +28,7 @@ Debemos definir cosas como:
 3. [Precios](estrategia/03-precios.md)
 4. [Flujo de captación](estrategia/04-flujo.md)
 5. [Nicho inicial: Guadalajara](estrategia/05-nicho-guadalajara.md)
+
+## Prospección
+
+Ver [prospeccion/README.md](prospeccion/README.md).
