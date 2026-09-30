@@ -25,6 +25,27 @@ Propuesta: **HubSpot CRM gratis** (tiene API, pipeline visual y app móvil). Alt
   2. WhatsApp **solo con quien ya respondió** o dio permiso.
   3. Si se usa WhatsApp en frío, que sea con un número secundario, a bajo volumen y con mensajes redactados por Claude pero enviados de forma manual o semiautomática.
 
+### Modo elegido: WhatsApp Business con número nuevo, envío semiautomático
+
+No se automatiza WhatsApp Web con bots (whatsapp-web.js, Baileys, extensiones de envío masivo): va contra los términos de WhatsApp y es la causa más común de baneo, sobre todo en números nuevos.
+
+Así funciona:
+
+1. El sistema prepara cada día una lista de leads con su mensaje personalizado, redactado por Claude.
+2. Cada lead trae un enlace `https://wa.me/52XXXXXXXXXX?text=...` con el mensaje ya escrito.
+3. Tú haces clic, revisas y envías desde WhatsApp Business. Cada envío toma unos 10 segundos.
+4. Las respuestas las marcas en el CRM, o las clasifica Claude si le pegas la conversación.
+
+Reglas para cuidar el número:
+
+- **Calentamiento:** usar el número 1–2 semanas de forma normal antes de prospectar. Completar el perfil de empresa: foto, descripción, horario, sitio y catálogo.
+- **Volumen:** empezar con 10–15 mensajes al día y subir poco a poco hasta un máximo de 30–40.
+- **Mensajes únicos:** cada mensaje menciona algo específico del negocio. Nunca mandar el mismo texto a todos.
+- **Sin enlaces en el primer mensaje:** enviar el diagnóstico o la agenda solo cuando respondan.
+- **Salida fácil:** incluir algo como "si no le interesa, dígamelo y no le vuelvo a escribir".
+- **Señal de alerta:** si varios contactos bloquean o reportan, bajar el volumen varios días.
+- Tener un **número de respaldo** por si banean el principal.
+
 ## Métricas
 
 - Leads identificados por semana
